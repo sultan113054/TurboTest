@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Turbo</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
+    <string name="action_settings">Close</string>
     <string name="home_fragment_label">Home</string>
     <string name="check_car_fragment_label">Check Car</string>
     <string name="maintenance_fragment_label">Maintenance</string>

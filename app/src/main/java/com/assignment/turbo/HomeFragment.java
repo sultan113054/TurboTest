@@ -30,8 +30,14 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        binding.buttonFirst.setOnClickListener((View.OnClickListener) view1 -> NavHostFragment.findNavController(HomeFragment.this)
-//                .navigate(R.id.action_FirstFragment_to_SecondFragment));
+        binding.btnHealth.setOnClickListener(view1 -> NavHostFragment.findNavController(HomeFragment.this)
+                .navigate(R.id.action_HomeFragment_to_healthFragment));
+        binding.btnCheckCar.setOnClickListener(view1 -> NavHostFragment.findNavController(HomeFragment.this)
+                .navigate(R.id.action_HomeFragment_to_checkCarFragment));
+        binding.btnRealtimeInfo.setOnClickListener(view1 -> NavHostFragment.findNavController(HomeFragment.this)
+                .navigate(R.id.action_HomeFragment_to_realtimeInformationFragment));
+        binding.btnMaintenance.setOnClickListener(view1 -> NavHostFragment.findNavController(HomeFragment.this)
+                .navigate(R.id.action_HomeFragment_to_maintenanceFragment));
     }
 
     @Override

@@ -1,16 +1,16 @@
 package com.assignment.turbo;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.assignment.turbo.databinding.FragmentCheckCarBinding;
-
 
 public class CheckCarFragment extends Fragment {
 
@@ -18,7 +18,7 @@ public class CheckCarFragment extends Fragment {
 
     @Override
     public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
+            @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
 
@@ -30,8 +30,18 @@ public class CheckCarFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        binding.buttonSecond.setOnClickListener(view1 -> NavHostFragment.findNavController(CheckCarFragment.this)
-//                .navigate(R.id.action_SecondFragment_to_FirstFragment));
+
+        binding.txtResult.setText("Bad O2");
+        binding.txtSuggestion.setText("Replace Exhaust");
+        binding.btnClearEngine.setOnClickListener(view1 -> {
+            Toast.makeText(getActivity(), "Engine is Clearing", Toast.LENGTH_LONG).show();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(getActivity(), "Engine is cleared", Toast.LENGTH_LONG).show();
+                }
+            }, 2000);
+        });
     }
 
     @Override

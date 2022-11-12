@@ -26,18 +26,18 @@
     <fragment
         android:id="@+id/healthFragment"
         android:name="com.assignment.turbo.HealthFragment"
-        android:label="HealthFragment" />
+        android:label="@string/Health_fragment_label" />
     <fragment
         android:id="@+id/checkCarFragment"
         android:name="com.assignment.turbo.CheckCarFragment"
-        android:label="CheckCarFragment" />
+        android:label="@string/check_car_fragment_label" />
     <fragment
         android:id="@+id/maintenanceFragment"
         android:name="com.assignment.turbo.MaintenanceFragment"
-        android:label="MaintenanceFragment" />
+        android:label="@string/maintenance_fragment_label" />
     <fragment
         android:id="@+id/realtimeInformationFragment"
         android:name="com.assignment.turbo.RealtimeInformationFragment"
-        android:label="RealtimeInformationFragment" />
+        android:label="@string/realtime_information_fragment_label" />
 
 </navigation>

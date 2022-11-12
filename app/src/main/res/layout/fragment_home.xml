@@ -1,29 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".HomeFragment">
 
-        <TextView
-            android:id="@+id/textview_second"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btn_health"
+            android:layout_width="218dp"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/button_second"
+            android:padding="16dp"
+            android:text="@string/Health_fragment_label"
+            app:layout_constraintBottom_toTopOf="@+id/btn_check_car"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <Button
-            android:id="@+id/button_second"
+            android:id="@+id/btn_check_car"
+            android:layout_width="218dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/check_car_fragment_label"
+            app:layout_constraintBottom_toTopOf="@+id/btn_realtime_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_health" />
+
+        <Button
+            android:id="@+id/btn_realtime_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/previous"
+            android:padding="16dp"
+            android:text="@string/realtime_information_fragment_label"
+            app:layout_constraintBottom_toTopOf="@+id/btn_maintenance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_check_car" />
+
+        <Button
+            android:id="@+id/btn_maintenance"
+            android:layout_width="218dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/maintenance_fragment_label"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview_second" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_realtime_info" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
