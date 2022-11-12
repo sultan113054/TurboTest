@@ -11,6 +11,9 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.assignment.turbo.databinding.FragmentHealthBinding;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class HealthFragment extends Fragment {
 
@@ -29,14 +32,23 @@ public class HealthFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        populateData();
+    }
 
-//        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(HealthFragment.this)
-//                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
-//            }
-//        });
+    private void populateData() {
+        List<HealthModel> dataModelList = new ArrayList<>();
+
+        dataModelList.add(new HealthModel("Oil Life", "50%"));
+        dataModelList.add(new HealthModel("Tire", "80%"));
+        dataModelList.add(new HealthModel("Air Filter Quality", "75%"));
+        dataModelList.add(new HealthModel("Oil Pressure", "90%"));
+        dataModelList.add(new HealthModel("Oil Life", "50%"));
+        dataModelList.add(new HealthModel("Tire", "80%"));
+        dataModelList.add(new HealthModel("Overall Health", "80%"));
+        dataModelList.add(new HealthModel("Estimated milage", "25,000 miles"));
+
+        HealthAdapter healthAdapter = new HealthAdapter(dataModelList);
+        binding.setHealthAdapter(healthAdapter);
     }
 
     @Override
