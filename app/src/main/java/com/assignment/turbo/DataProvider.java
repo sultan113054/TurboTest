@@ -24,32 +24,18 @@ public class DataProvider {
     }
 
     private DataProvider() {
-        realTimeInfoDataModelList.add(new RealtimeInfoModel(R.drawable.temperature, "Oil Temperature", "190.4"));
-        realTimeInfoDataModelList.add(new RealtimeInfoModel(R.drawable.coolant_tempearature1, "Coolant Temperature", "73.0 F"));
-        realTimeInfoDataModelList.add(new RealtimeInfoModel(R.drawable.boost, "Boost", "19.7 psi"));
-        realTimeInfoDataModelList.add(new RealtimeInfoModel(R.drawable.oil_pressure, "Oil Pressure", "150 psi"));
+
+        getRealTimeInfoDataModelList();
+        getHealthDataModelList();
+        getIssueAndFix();
+        getMaintenance();
 
 
-        healthDataModelList.add(new HealthModel("Oil Life", returnStringBuilder()));
-        healthDataModelList.add(new HealthModel("Tire", returnStringBuilder()));
-        healthDataModelList.add(new HealthModel("Air Filter Quality", returnStringBuilder()));
-        healthDataModelList.add(new HealthModel("Oil Pressure", returnStringBuilder()));
-        healthDataModelList.add(new HealthModel("Oil Life", returnStringBuilder()));
-        healthDataModelList.add(new HealthModel("Tire", "80%"));
-        healthDataModelList.add(new HealthModel("Overall Health", returnStringBuilder()));
-        healthDataModelList.add(new HealthModel("Estimated mileage", returnStringBuilder4Miles()));
+    }
 
-        String[] issues = {"Bad O2", "Old cabin Filter", "Dirty Engine Filter"};
-        String[] fix = {"Replace Exhaust", "Replace cabin Filter", "Replace Engine Filter"};
-        Random r = new Random();
-        int index = r.nextInt(issues.length);
-        issueString = issues[index];
-        fixString = fix[index];
-
-
+    private void getMaintenance() {
         int min = 50;
         int max = 300;
-        //int random= = new Random().nextInt((max - min) + 1) + min;
 
         int random = (new Random()).nextInt((max - min) + 1) + min;
 
@@ -70,19 +56,45 @@ public class DataProvider {
         random = (new Random()).nextInt((max - min) + 1) + min;
         StringBuilder s2 = new StringBuilder(100);
         s2.append(random);
-
         daysString = s2.toString();
+
+    }
+
+    private void getIssueAndFix() {
+        String[] issues = {"Bad O2", "Old cabin Filter", "Dirty Engine Filter"};
+        String[] fix = {"Replace Exhaust", "Replace cabin Filter", "Replace Engine Filter"};
+        Random r = new Random();
+        int index = r.nextInt(issues.length);
+        issueString = issues[index];
+        fixString = fix[index];
+    }
+
+    private void getHealthDataModelList() {
+        healthDataModelList.add(new HealthModel("Oil Life", returnStringBuilder()));
+        healthDataModelList.add(new HealthModel("Tire", returnStringBuilder()));
+        healthDataModelList.add(new HealthModel("Air Filter Quality", returnStringBuilder()));
+        healthDataModelList.add(new HealthModel("Oil Pressure", returnStringBuilder()));
+        healthDataModelList.add(new HealthModel("Oil Life", returnStringBuilder()));
+        healthDataModelList.add(new HealthModel("Tire", "80%"));
+        healthDataModelList.add(new HealthModel("Overall Health", returnStringBuilder()));
+        healthDataModelList.add(new HealthModel("Estimated mileage", returnStringBuilder4Miles()));
+
+    }
+
+    private void getRealTimeInfoDataModelList() {
+        realTimeInfoDataModelList.add(new RealtimeInfoModel(R.drawable.temperature, "Oil Temperature", "190.4"));
+        realTimeInfoDataModelList.add(new RealtimeInfoModel(R.drawable.coolant_tempearature1, "Coolant Temperature", "73.0 F"));
+        realTimeInfoDataModelList.add(new RealtimeInfoModel(R.drawable.boost, "Boost", "19.7 psi"));
+        realTimeInfoDataModelList.add(new RealtimeInfoModel(R.drawable.oil_pressure, "Oil Pressure", "150 psi"));
     }
 
     private String returnStringBuilder4Miles() {
         int min = 10000;
         int max = 95000;
-        //int random= = new Random().nextInt((max - min) + 1) + min;
-
         int random = (new Random()).nextInt((max - min) + 1) + min;
 
         StringBuilder s = new StringBuilder(100);
-        s.append(String.valueOf(random));
+        s.append(random);
         s.append(" miles");
 
         String singleString = s.toString();
@@ -92,12 +104,10 @@ public class DataProvider {
     private String returnStringBuilder() {
         int min = 0;
         int max = 100;
-        //int random= = new Random().nextInt((max - min) + 1) + min;
 
         int random = (new Random()).nextInt((max - min) + 1) + min;
-
         StringBuilder s = new StringBuilder(100);
-        s.append(String.valueOf(random));
+        s.append(random);
         s.append("%");
 
         String singleString = s.toString();
