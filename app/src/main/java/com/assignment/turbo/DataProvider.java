@@ -42,7 +42,7 @@ public class DataProvider {
 
         StringBuilder s = new StringBuilder(100);
         s.append("Next estimated maintenance at ");
-        s.append(String.valueOf(random));
+        s.append(random);
         s.append(" miles");
 
         maintenanceTitleString = s.toString();
@@ -97,8 +97,7 @@ public class DataProvider {
         s.append(random);
         s.append(" miles");
 
-        String singleString = s.toString();
-        return singleString;
+        return  s.toString();
     }
 
     private String returnStringBuilder() {
@@ -110,8 +109,7 @@ public class DataProvider {
         s.append(random);
         s.append("%");
 
-        String singleString = s.toString();
-        return singleString;
+        return s.toString();
     }
 
 }
