@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment;
 
 import com.assignment.turbo.databinding.FragmentCheckCarBinding;
 
+import java.util.Random;
+
 public class CheckCarFragment extends Fragment {
 
     private FragmentCheckCarBinding binding;
@@ -30,9 +32,17 @@ public class CheckCarFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        String[] issues = {"Bad O2", "Old cabin Filter", "Dirty Engine Filter"};
+        String[] fix = {"Replace Exhaust", "Replace cabin Filter" ,"Replace Engine Filter"};
+        Random r = new Random();
+        int index=r.nextInt(issues.length );
+        String issuestring = String.valueOf( issues [index]);
+        String fixtring = String.valueOf( fix [index]);
 
-        binding.txtResult.setText("Bad O2");
-        binding.txtSuggestion.setText("Replace Exhaust");
+
+
+        binding.txtResult.setText(issuestring);
+        binding.txtSuggestion.setText(fixtring);
         binding.btnClearEngine.setOnClickListener(view1 -> {
             Toast.makeText(getActivity(), "Engine is Clearing", Toast.LENGTH_LONG).show();
             new Handler().postDelayed(new Runnable() {
