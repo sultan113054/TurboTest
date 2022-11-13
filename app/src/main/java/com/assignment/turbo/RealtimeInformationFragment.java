@@ -8,11 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-
 import com.assignment.turbo.databinding.FragmentRealtimeInformationBinding;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class RealtimeInformationFragment extends Fragment {
@@ -36,15 +32,10 @@ public class RealtimeInformationFragment extends Fragment {
     }
 
     private void populateData() {
-        List<RealtimeInfoModel> dataModelList = new ArrayList<>();
 
-        dataModelList.add(new RealtimeInfoModel(R.drawable.temperature, "Oil Temperature", "190.4"));
-        dataModelList.add(new RealtimeInfoModel(R.drawable.coolant_tempearature1, "Coolant Temperature", "73.0 F"));
-        dataModelList.add(new RealtimeInfoModel(R.drawable.boost, "Boost", "19.7 psi"));
-        dataModelList.add(new RealtimeInfoModel(R.drawable.oil_pressure, "Oil Pressure", "150 psi"));
-
-
-        RealtimeInfoAdapter realtimeInfoAdapter = new RealtimeInfoAdapter(dataModelList);
+        RealtimeInfoAdapter realtimeInfoAdapter =
+                new RealtimeInfoAdapter(DataProvider.realTimeInfoDataModelList
+                );
         binding.setRealtimeInfoAdapter(realtimeInfoAdapter);
     }
 

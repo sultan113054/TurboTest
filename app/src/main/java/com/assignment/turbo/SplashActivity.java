@@ -12,7 +12,7 @@ public class SplashActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
-
+        DataProvider.getInstance();
         handler=new Handler();
         handler.postDelayed(() -> {
             Intent intent=new Intent(SplashActivity.this,MainActivity.class);
